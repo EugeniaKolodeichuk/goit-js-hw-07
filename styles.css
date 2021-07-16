@@ -1,0 +1,22 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.grid-item {
+    flex-basis: calc((100% - 30px * var(3)) / var(3));
+    margin-left: 30px;
+    margin-top: 30px;
+}
