@@ -17,17 +17,10 @@ const listEl = document.querySelector('#gallery');
 listEl.classList.add('grid');
 console.log(listEl);
 
-const elements = images.map(image => {
-  const itemEl = document.createElement('li');
-  const imgEl = document.createElement('img');
-  itemEl.classList.add('grid-item');
-  imgEl.src = image.url;
-  imgEl.alt = image.alt;
-  imgEl.width = 320;
-  itemEl.insertAdjacentElement('afterbegin', imgEl);
-  listEl.insertAdjacentHTML('beforeend', `<li><img src="${image.url}" width= 320 alt = "${image.alt}"></li>`);
-  
-  return itemEl;
+const galleryEl = images.map(element => {
+  const imgEl = `<li class="grid-item"><img src="${element.url}" alt="${element.alt}" width=320></li>`;
+ 
+  return imgEl;
 });
 
-console.log(elements);
+listEl.insertAdjacentHTML("beforeend", galleryEl.join(' '));
